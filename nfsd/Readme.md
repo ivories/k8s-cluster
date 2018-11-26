@@ -1,4 +1,3 @@
-![](https://images.microbadger.com/badges/version/gists/nfsd.svg) ![](https://images.microbadger.com/badges/image/gists/nfsd.svg) ![](https://img.shields.io/docker/stars/gists/nfsd.svg) ![](https://img.shields.io/docker/pulls/gists/nfsd.svg)
 
 #### Environment:
 
