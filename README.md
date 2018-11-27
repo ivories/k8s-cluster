@@ -2,7 +2,7 @@
 about yaml for k8s cluster 
 
 
-## init
+## init --> Execution in command line
 cd / 
 
 sudo mkdir -p data0 
