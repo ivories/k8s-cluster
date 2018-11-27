@@ -308,9 +308,13 @@ Startup successful.
 The Dockerfile used to create this image is available at the root of the file system on build.
 
 FROM alpine:latest
+
 LABEL maintainer "Steven Iveson <steve@iveson.eu>"
+
 LABEL source "https://github.com/sjiveson/nfs-server-alpine"
+
 LABEL branch "master"
+
 COPY Dockerfile /README.md
 
 RUN apk add --no-cache --update --verbose nfs-utils bash iproute2 && \
