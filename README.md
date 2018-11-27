@@ -13,6 +13,10 @@ sudo git clone https://github.com/lyclyc88/k8s-cluster.git data
 
 
 
-### nfsd in docker
+### run nfsd in docker
+
+
+
+### run nfsd in k8s
 
 
