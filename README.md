@@ -14,6 +14,7 @@ sudo git clone https://github.com/lyclyc88/k8s-cluster.git data
 ### run nfsd 
 #### run nfsd in docker
 docker stop nfsd && docker rm nfsd
+
 docker run -d --name nfsd --privileged  -p 2049:2049 -v /home/core/data:/nfsshare  -e SHARED_DIRECTORY=/nfsshare  ivories/nfsd
 
 Add --net=host or -p 2049:2049 to make the shares externally accessible via the host networking stack. This isn't necessary if using Rancher or linking containers in some other way.
