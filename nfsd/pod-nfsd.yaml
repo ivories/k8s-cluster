@@ -23,5 +23,5 @@ spec:
       mountPath: /nfsshare
   volumes:
   - name: nfsshare
-    hostPth: 
+    hostPath: 
       path: /
