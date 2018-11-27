@@ -62,9 +62,6 @@ You'll note above with the docker run command that privileged mode is required. 
 
 See the following sub-sections for information on doing the same in non-interactive environments.
 
-### Systemctl 
-#### sudo systemctl daemon-reload && sudo systemctl enable nfsd && sudo systemctl restart nfsd &
-
 ### Kubernetes
 As reported here https://github.com/sjiveson/nfs-server-alpine/issues/8 it appears Kubernetes requires the privileged: true option to be set:
 
