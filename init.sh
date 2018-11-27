@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 cd /
 mkdir -p data0
 cd data0 
