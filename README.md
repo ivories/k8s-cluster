@@ -36,9 +36,9 @@ sudo mount -v 172.18.0.2:/ /data
 or 
 sudo mount -v -o vers=4,loud 172.18.0.2:/ /data
 
-#### in k8s  ####
+#### in k8s
 
-#### run nfsd in k8s ####
+#### client mount in k8s
 
 
 
