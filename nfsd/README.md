@@ -71,6 +71,7 @@ spec:
     image: ...
     securityContext:
       privileged: true
+      
 To use capabilities instead:
 
 spec:
@@ -80,12 +81,14 @@ spec:
     securityContext:
       capabilities:
         add: ["SYS_ADMIN", "SETPCAP"]
+	
 Note that AllowPrivilegeEscalation is automatically set to true when privileged mode is set to true or the SYS_ADMIN capability added.
 
 Docker Compose v2/v3 or Rancher v1.x
 When using Docker Compose you can specify privileged mode like so:
 
 privileged: true
+
 To use capabilities instead:
 
 cap_add:
