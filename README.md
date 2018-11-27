@@ -7,3 +7,6 @@ cd /
 sudo mkdir -p data0
 cd data0 
 sudo git clone https://github.com/lyclyc88/k8s-cluster.git data
+
+
+
