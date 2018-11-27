@@ -4,7 +4,8 @@ LABEL maintainer "Steven Iveson <steve@iveson.eu>"
 LABEL source "https://github.com/sjiveson/nfs-server-alpine"
 LABEL branch "master"
 
-COPY Dockerfile /README.md
+COPY Dockerfile /
+COPY README.md /
 
 RUN apk add --no-cache --update --verbose nfs-utils bash iproute2 && \
     rm -rf /var/cache/apk /tmp /sbin/halt /sbin/poweroff /sbin/reboot && \
