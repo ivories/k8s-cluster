@@ -7,9 +7,18 @@ metadata:
   namespace: default
 spec:
   containers:
-  - image: gists/nfsd
+  - name: nfsd
+    image: itsthenetwork/nfs-server-alpine
     imagePullPolicy: Always
-    name: nfsd
+    securityContext: 
+      privileged: true
     resources: {}
     terminationMessagePath: /dev/termination-log
     terminationMessagePolicy: File
+    volumeMounts:
+    - name: nfsshare
+      mountPath: /nfsshare
+  volumes:
+  - name: nfsshare
+    hostPth: 
+      path: /
