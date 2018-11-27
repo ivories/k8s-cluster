@@ -158,39 +158,73 @@ Displaying /etc/exports contents:
 /nfsshare *(rw,fsid=0,async,no_subtree_check,no_auth_nlm,insecure,no_root_squash)
 
 Starting rpcbind...
+
 Displaying rpcbind status...
+
    program version netid     address                service    owner
+   
     100000    4    tcp6      ::.0.111               -          superuser
+	
     100000    3    tcp6      ::.0.111               -          superuser
+	
     100000    4    udp6      ::.0.111               -          superuser
+	
     100000    3    udp6      ::.0.111               -          superuser
+	
     100000    4    tcp       0.0.0.0.0.111          -          superuser
+	
     100000    3    tcp       0.0.0.0.0.111          -          superuser
+	
     100000    2    tcp       0.0.0.0.0.111          -          superuser
+	
     100000    4    udp       0.0.0.0.0.111          -          superuser
+	
     100000    3    udp       0.0.0.0.0.111          -          superuser
+	
     100000    2    udp       0.0.0.0.0.111          -          superuser
+	
     100000    4    local     /var/run/rpcbind.sock  -          superuser
+	
     100000    3    local     /var/run/rpcbind.sock  -          superuser
+	
 Starting NFS in the background...
+
 rpc.nfsd: knfsd is currently down
+
 rpc.nfsd: Writing version string to kernel: -2 -3 +4
+
 rpc.nfsd: Created AF_INET TCP socket.
+
 rpc.nfsd: Created AF_INET6 TCP socket.
+
 Exporting File System...
+
 exporting *:/nfsshare
+
 /nfsshare         <world>
+	
 Starting Mountd in the background...
+
 Startup successful.
+
 What Good Looks Like - Confd Versions
+
 The PERMITTED environment variable is missing or null, defaulting to '*'.
+
 Any client can mount.
+
 The READ_ONLY environment variable is missing or null, defaulting to 'rw'
+
 Clients have read/write access.
+
 The SYNC environment variable is missing or null, defaulting to 'async'.
+
 Writes will not be immediately written to disk.
+
 Starting Confd population of files...
+
 confd 0.14.0 (Git SHA: 9fab9634, Go Version: go1.9.1)
+
 2018-05-07T18:24:39Z d62d37258311 /usr/bin/confd[14]: INFO Backend set to env
 2018-05-07T18:24:39Z d62d37258311 /usr/bin/confd[14]: INFO Starting confd
 2018-05-07T18:24:39Z d62d37258311 /usr/bin/confd[14]: INFO Backend source(s) set to
@@ -199,21 +233,37 @@ confd 0.14.0 (Git SHA: 9fab9634, Go Version: go1.9.1)
 2018-05-07T18:24:39Z d62d37258311 /usr/bin/confd[14]: INFO Target config /etc/exports has been updated
 Displaying /etc/exports contents...
 /nfsshare *(rw,fsid=0,async,no_subtree_check,no_auth_nlm,insecure,no_root_squash)
+
 Starting rpcbind...
+
 Displaying rpcbind status...
+
    program version netid     address                service    owner
+   
     100000    4    tcp6      ::.0.111               -          superuser
+	
     100000    3    tcp6      ::.0.111               -          superuser
+	
     100000    4    udp6      ::.0.111               -          superuser
+	
     100000    3    udp6      ::.0.111               -          superuser
+	
     100000    4    tcp       0.0.0.0.0.111          -          superuser
+	
     100000    3    tcp       0.0.0.0.0.111          -          superuser
+	
     100000    2    tcp       0.0.0.0.0.111          -          superuser
+	
     100000    4    udp       0.0.0.0.0.111          -          superuser
+	
     100000    3    udp       0.0.0.0.0.111          -          superuser
+	
     100000    2    udp       0.0.0.0.0.111          -          superuser
+	
     100000    4    local     /var/run/rpcbind.sock  -          superuser
+	
     100000    3    local     /var/run/rpcbind.sock  -          superuser
+	
 Starting NFS in the background...
 rpc.nfsd: knfsd is currently down
 rpc.nfsd: Writing version string to kernel: -2 -3 +4
