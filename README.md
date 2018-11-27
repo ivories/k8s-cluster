@@ -12,7 +12,7 @@ cd core
 sudo git clone https://github.com/lyclyc88/k8s-cluster.git data
 
 ### run nfsd 
-#### run nfsd in docker
+#### in docker
 docker stop nfsd && docker rm nfsd
 
 docker run -d --name nfsd --privileged  -p 2049:2049 -v /home/core/data:/nfsshare  -e SHARED_DIRECTORY=/nfsshare  ivories/nfsd
@@ -25,17 +25,24 @@ Adding -e SYNC=true will cause the exports file to contain sync instead of async
 
 Adding -e PERMITTED="10.11.99.*" will permit only hosts with an IP address starting 10.11.99 to mount the file share.
 
-#### run nfsd in systemctl
+#### with systemctl
 sudo cp -rfp /home/core/data/nfsd/nfsd.service /etc/systemd/system/nfsd.service
 sudo systemctl daemon-reload && sudo systemctl enable nfsd && sudo systemctl restart nfsd &
 
-#### run nfsd in k8s
-
-
-#### client mount 
+#### client mount in docker
+docker run -d --name nfsc --privileged  -v /home/core/data:/nfsshare -e SHARED_DIRECTORY=/nfsshare ivories/nfsd
+docker exec -it nfsc
 sudo mount -v 172.18.0.2:/ /data
 or 
 sudo mount -v -o vers=4,loud 172.18.0.2:/ /data
+
+#### in k8s  ####
+
+#### run nfsd in k8s ####
+
+
+
+
 
 
 
