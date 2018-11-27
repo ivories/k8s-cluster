@@ -9,6 +9,9 @@ spec:
   containers:
   - name: nfsd
     image: itsthenetwork/nfs-server-alpine
+    env:
+    - name: SHARED_DIRECTORY
+      value: /nfsshare
     imagePullPolicy: Always
     securityContext: 
       privileged: true
