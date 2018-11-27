@@ -27,16 +27,22 @@ Adding -e PERMITTED="10.11.99.*" will permit only hosts with an IP address start
 
 #### with systemctl
 sudo cp -rfp /home/core/data/nfsd/nfsd.service /etc/systemd/system/nfsd.service
+
 sudo systemctl daemon-reload && sudo systemctl enable nfsd && sudo systemctl restart nfsd &
 
 #### client mount in docker
 docker run -d --name nfsc --privileged  -v /home/core/data:/nfsshare -e SHARED_DIRECTORY=/nfsshare ivories/nfsd
+
 docker exec -it nfsc
+
 sudo mount -v 172.18.0.2:/ /data
-or 
+
+or
+
 sudo mount -v -o vers=4,loud 172.18.0.2:/ /data
 
 #### in k8s
+
 
 #### client mount in k8s
 
