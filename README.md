@@ -12,6 +12,7 @@ cd core
 sudo git clone https://github.com/lyclyc88/k8s-cluster.git data
 
 ### run nfsd in docker
+docker stop nfsd && docker rm nfsd
 docker run -d --name nfsd --privileged  -p 2049:2049 -v /home/core/data:/nfsshare  -e SHARED_DIRECTORY=/nfsshare  ivories/nfsd
 
 ### run nfsd in systemctl
