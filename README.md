@@ -33,9 +33,9 @@ sudo systemctl daemon-reload && sudo systemctl enable nfsd && sudo systemctl res
 
 
 #### client mount 
-sudo mount -v 10.11.12.101:/ /some/where/here  
+sudo mount -v 172.18.0.2:/ /data
 or 
-sudo mount -v -o vers=4,loud 10.11.12.101:/ /some/where/here
+sudo mount -v -o vers=4,loud 172.18.0.2:/ /data
 
 
 
