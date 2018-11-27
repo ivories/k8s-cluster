@@ -3,11 +3,11 @@ about yaml for k8s cluster
 
 
 ## init --> Execution in command line
-cd / 
+cd /home 
 
-sudo mkdir -p data0 
+sudo mkdir -p core 
 
-cd data0  
+cd core
 
 sudo git clone https://github.com/lyclyc88/k8s-cluster.git data
 
