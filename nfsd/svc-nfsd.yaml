@@ -4,7 +4,7 @@ metadata:
   name: nfss
 spec:
   selector:
-    app: nfsd
+    app: nfsd2
   ports:
   - name: tcp111
     protocol: TCP
