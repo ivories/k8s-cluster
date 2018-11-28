@@ -9,6 +9,12 @@ spec:
   containers:
   - name: nfsd
     image: itsthenetwork/nfs-server-alpine
+    ports: 
+    - name: tcp111 
+      containerPort: 30111
+      hostPort: 111 
+      protocol: TCP
+
     env:
     - name: SHARED_DIRECTORY
       value: /nfsshare
