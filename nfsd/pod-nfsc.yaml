@@ -28,5 +28,5 @@ spec:
     emptyDir: {}
   - name: data
     nfs:
-      server: nfsd #10.28.4.22
+      server: 10.28.4.22
       path: /
