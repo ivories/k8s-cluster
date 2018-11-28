@@ -14,7 +14,18 @@ spec:
       containerPort: 30111
       hostPort: 111 
       protocol: TCP
-
+    - name: udp111 
+      containerPort: 30111
+      hostPort: 111 
+      protocol: UDP
+    - name: tcp2049
+      containerPort: 32049
+      hostPort: 2049 
+      protocol: TCP
+    - name: udp2049
+      containerPort: 32049
+      hostPort: 2049 
+      protocol: UDP
     env:
     - name: SHARED_DIRECTORY
       value: /nfsshare
