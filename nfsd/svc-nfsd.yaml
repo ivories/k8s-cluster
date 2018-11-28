@@ -10,20 +10,24 @@ spec:
     protocol: TCP
     port: 111
     targetPort: 111
+    #    nodePort: 111
     nodePort: 30111
   - name: tcp2049
     protocol: TCP 
     port: 2049
     targetPort: 2049
+    #    nodePort: 2049
     nodePort: 32049
   - name: udp111
     protocol: UDP
     port: 111
     targetPort: 111
+    #    nodePort: 111
     nodePort: 30111
   - name: udp2049
     protocol: UDP
     port: 2049
     targetPort: 2049
+    #    nodePort: 2049
     nodePort: 32049
   type: NodePort
