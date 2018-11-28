@@ -21,14 +21,8 @@ spec:
     volumeMounts:
     - name: nfsshare
       mountPath: /nfsshare
-#  volumes:
-#  - name: nfsshare
-#    hostPath: 
-#      path: /
-#  volumes:
-#  - name: nfsshare
-#    emptyDir: {}
   volumes:
   - name: nfsshare
-    persistentVolumeClaim: 
-      claimName: pvc
+    nfs:
+      server: 172.18.0.2
+      path: /
