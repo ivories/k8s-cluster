@@ -2,12 +2,12 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    app: nfsd
-  name: nfsd
+    app: nfsc
+  name: nfsc
   namespace: default
 spec:
   containers:
-  - name: nfsd
+  - name: nfsc
     image: itsthenetwork/nfs-server-alpine
     env:
     - name: SHARED_DIRECTORY
