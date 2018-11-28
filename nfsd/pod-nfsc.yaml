@@ -23,6 +23,9 @@ spec:
       mountPath: /nfsshare
   volumes:
   - name: nfsshare
-    nfs:
-      server: 10.28.4.22
-      path: /
+    emptyDir: {}
+#  volumes:
+#  - name: nfsshare
+#    nfs:
+#      server: 10.28.4.22
+#      path: /
