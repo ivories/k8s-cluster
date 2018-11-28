@@ -20,12 +20,12 @@ spec:
     terminationMessagePolicy: File
     volumeMounts:
     - name: nfsshare
-      mountPath: /nfsshare
-  volumes:
-  - name: nfsshare
-    emptyDir: {}
+      mountPath: /data
 #  volumes:
 #  - name: nfsshare
-#    nfs:
-#      server: 10.28.4.22
-#      path: /
+#    emptyDir: {}
+  volumes:
+  - name: nfsshare
+    nfs:
+      server: 10.28.4.22
+      path: /
