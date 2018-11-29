@@ -2,12 +2,12 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    app: nfsd2
-  name: nfsd2
+    app: nfsd
+  name: nfsd
   namespace: default
 spec:
   containers:
-  - name: nfsd2
+  - name: nfsd
     image: itsthenetwork/nfs-server-alpine
     ports: 
     - name: tcp111 
