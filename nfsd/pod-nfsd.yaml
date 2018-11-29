@@ -12,19 +12,19 @@ spec:
     ports: 
     - name: tcp111 
       containerPort: 111
-      hostPort: 111 
+      hostPort: 30111 
       protocol: TCP
     - name: udp111 
       containerPort: 111
-      hostPort: 111 
+      hostPort: 30111 
       protocol: UDP
     - name: tcp2049
       containerPort: 2049
-      hostPort: 2049 
+      hostPort: 32049 
       protocol: TCP
     - name: udp2049
       containerPort: 2049
-      hostPort: 2049 
+      hostPort: 32049 
       protocol: UDP
     env:
     - name: SHARED_DIRECTORY
