@@ -22,7 +22,7 @@ spec:
     - name: nfsshare
       mountPath: /nfsshare
     - name: data
-      mountPath: /data
+      mountPath: /home/core/data
   volumes:
   - name: nfsshare
     emptyDir: {}
