@@ -25,7 +25,7 @@ spec:
         persistentVolumeClaim:
           claimName: nfsd
       containers:
-      - image: nginx   #ivories/nginx
+      - image: ivories/nginx
         imagePullPolicy: Always
         name: nginx
         resources: {}
