@@ -25,7 +25,7 @@ spec:
         persistentVolumeClaim:
           claimName: nfsd
       containers:
-      - image: ivories/nginx
+      - image: nginx   #ivories/nginx
         imagePullPolicy: Always
         name: nginx
         resources: {}
@@ -33,7 +33,7 @@ spec:
         terminationMessagePolicy: File
         volumeMounts:
         - name: nfsd
-          mountPath: /etc/nginx
+          mountPath: /nginx     #/etc/nginx
           subPath: nginx/conf
         - name: nfsd
           mountPath: /www
