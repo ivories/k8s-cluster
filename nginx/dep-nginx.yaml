@@ -17,14 +17,13 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: nginx
-    volumes:
-    - name: nfsd
-      persistentVolumeClaim:
-        claimName: nfsd
     spec:
+      volumes:
+      - name: nfsd
+        persistentVolumeClaim:
+          claimName: nfsd
       containers:
       - image: ivories/nginx
         imagePullPolicy: Always
