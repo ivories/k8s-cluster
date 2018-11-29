@@ -34,7 +34,7 @@ spec:
         volumeMounts:
         - name: nfsd
           mountPath: /etc/nginx
-          subPath: nginx
+          subPath: nginx/conf
         - name: nfsd
           mountPath: /www
           subPath: www
