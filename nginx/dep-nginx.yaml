@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
@@ -15,15 +15,15 @@ spec:
       maxSurge: 1
       maxUnavailable: 1
     type: RollingUpdate
-  volumes:
-  - name: nfsd
-    persistentVolumeClaim:
-      claimName: nfsd
   template:
     metadata:
       creationTimestamp: null
       labels:
         app: nginx
+    volumes:
+    - name: nfsd
+      persistentVolumeClaim:
+        claimName: nfsd
     spec:
       containers:
       - image: ivories/nginx
