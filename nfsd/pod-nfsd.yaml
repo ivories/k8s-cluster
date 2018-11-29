@@ -11,20 +11,16 @@ spec:
     image: itsthenetwork/nfs-server-alpine
     ports: 
     - name: tcp111 
-      containerPort: 111
-      #hostPort: 30111 
+      containerPort: 111   #容器需要开放的端口
       protocol: TCP
     - name: udp111 
-      containerPort: 111
-      #hostPort: 30111 
+      containerPort: 111   #容器需要开放的端口
       protocol: UDP
     - name: tcp2049
-      containerPort: 2049
-      #hostPort: 32049 
+      containerPort: 2049   #容器需要开放的端口
       protocol: TCP
     - name: udp2049
-      containerPort: 2049
-      #hostPort: 32049 
+      containerPort: 2049   #容器需要开放的端口
       protocol: UDP
     env:
     - name: SHARED_DIRECTORY
