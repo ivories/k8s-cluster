@@ -33,7 +33,7 @@ spec:
         terminationMessagePolicy: File
         volumeMounts:
         - name: nfsd
-          mountPath: /nginx     #/etc/nginx
+          mountPath: /etc/nginx
           subPath: nginx/conf
         - name: nfsd
           mountPath: /www
