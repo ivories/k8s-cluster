@@ -4,7 +4,7 @@ metadata:
   name: php
 spec:
   selector:
-    app:php
+    app: php
   ports:
   - protocol: TCP
     port: 9000
