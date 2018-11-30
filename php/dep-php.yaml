@@ -31,8 +31,11 @@ spec:
         resources: {}
         volumeMounts:
         - name: nfsd
-          mountPath: /etc/php
+          mountPath: /usr/local/etc/
           subPath: php/conf
+#        - name: nfsd
+#          mountPath: /etc/php
+#          subPath: php/conf
         - name: nfsd
           mountPath: /www
           subPath: www
