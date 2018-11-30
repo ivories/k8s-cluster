@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
@@ -17,15 +17,25 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: php
     spec:
+      volumes:
+      - name: nfsd
+        persistentVolumeClaim:
+          claimName: nfsd
       containers:
       - image: ivories/php:latest
         imagePullPolicy: Always
         name: php
         resources: {}
+        volumeMounts:
+        - name: nfsd
+          mountPath: /etc/php
+          subPath: php/conf
+        - name: nfsd
+          mountPath: /www
+          subPath: www
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
