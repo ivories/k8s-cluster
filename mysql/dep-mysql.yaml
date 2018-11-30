@@ -39,6 +39,9 @@ spec:
         - name: nfsd
           mountPath: /var/lib/mysql
           subPath: mysql/data
+        - name: nfsd
+          mountPath: /var/log/mysql
+          subPath: mysql/log
         resources: {}
       dnsPolicy: ClusterFirst
       restartPolicy: Always
