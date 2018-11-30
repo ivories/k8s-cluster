@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
@@ -21,10 +21,18 @@ spec:
       labels: 
         app: redis
     spec:
+      volumes: 
+      - name: nfsd
+        persistenVolumeClaim: 
+          claimName: nfsd
       containers:
       - image: ivories/redis:latest 
         imagePullPolicy: Always
         name: redis
+        volumeMounts:
+        - name: nfsd
+          mountPath: /redis_store
+          subPath: redis
         resources: {}
       restartPolicy: Always
       schedulerName: default-scheduler
