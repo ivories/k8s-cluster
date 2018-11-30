@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
@@ -21,10 +21,24 @@ spec:
       labels:
         app: mysql
     spec:
+      volumes:
+      - name: nfsd
+        persistentVolumeClaim:
+          claimName: nfsd
       containers:
       - image: ivories/mysql:latest
         imagePullPolicy: Always
         name: mysql
+        env: 
+        - name: MYSQL_ROOT_PASSWORD
+          value: yellow 
+        volumeMounts:
+        - name: nfsd
+          mountPath: /etc/mysql
+          subPath: mysql
+        - name: nfsd
+          mountPath: /var/lib/mysql
+          subPath: mysql/data
         resources: {}
       dnsPolicy: ClusterFirst
       restartPolicy: Always
