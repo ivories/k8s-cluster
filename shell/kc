@@ -1,0 +1,19 @@
+#!/bin/bash
+usage()
+{
+  echo "usage:"
+  echo "    kc something                 => kubectl create -f something"
+  echo "    kc something1 something1 ... => kubectl create -f something1 -f something ..."
+  echo "\"something\" is a name of the config file."
+}
+
+if [ $# -gt 0 ];then 
+  args="$@"
+  for arg in $args;do
+    tmp="${tmp} -f ${arg}"
+  done
+else
+  usage
+fi
+
+

@@ -1,0 +1,19 @@
+#!/bin/bash
+usage()
+{
+  echo "usage:"
+  echo "    ke something             => kubectl exec -it something sh"
+  echo "    ke something dosomething => kubectl exec -it something dosomething"
+  echo "\"something\" is the name in \"kubectl get pods\" list."
+  kubectl get pods
+  echo "\"dosomething\" is a command that execution after entry."
+}
+
+if [ $# == 1 ]; then
+  kubectl exec -it $1 sh
+elif [ $# -ge 2 ]; then
+  kubectl exec -it $@
+else
+  usage
+fi
+

@@ -1,0 +1,14 @@
+#!/bin/bash
+usage()
+{
+  echo "usage:"
+  echo "    kg something=> kubectl get something"
+  echo "\"something\" is the name in \"pod,svc,pv,pvc,node,rc,sc\" list."
+}
+
+if [ $# == 1 ]; then
+  kubectl get  $1
+else
+  usage
+fi
+

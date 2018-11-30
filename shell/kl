@@ -1,0 +1,15 @@
+#!/bin/bash
+usage()
+{
+  echo "usage:"
+  echo "    kl something=> kubectl logs something"
+  echo "\"something\" is the name in \"kubectl get pods\" list."
+  kubectl get pods
+}
+
+if [ $# == 1 ]; then
+  kubectl logs  $1
+else
+  usage
+fi
+
