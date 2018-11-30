@@ -5,6 +5,6 @@ metadata:
 spec:
   selector:
     app:php
-  parts:
+  ports:
   - protocol: TCP
     port: 9000
