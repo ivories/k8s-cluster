@@ -23,7 +23,7 @@ spec:
     spec:
       volumes: 
       - name: nfsd
-        persistenVolumeClaim: 
+        persistentVolumeClaim: 
           claimName: nfsd
       containers:
       - image: ivories/redis:latest 
