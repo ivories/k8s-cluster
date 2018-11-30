@@ -28,6 +28,8 @@ spec:
       - image: ivories/php:latest
         imagePullPolicy: Always
         name: php
+        ports:
+        - containerPort: 9000
         resources: {}
         volumeMounts:
         - name: nfsd
