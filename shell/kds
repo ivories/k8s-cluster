@@ -1,0 +1,15 @@
+#!/bin/bash
+usage()
+{
+  echo "usage:"
+  echo "    kds ssomething=> kubectl describe something"
+  echo "more info,see:\"kubectl describe -h\" or \"kds -h\""
+  kubectl describe -h
+}
+
+if [ $# -ge 1 ]; then
+  kubectl describe  $@
+else
+  usage
+fi
+
