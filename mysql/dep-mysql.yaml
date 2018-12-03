@@ -42,7 +42,13 @@ spec:
         - name: nfsd
           mountPath: /var/log/mysql
           subPath: mysql/log
-        resources: {}
+        resources: 
+          requests:
+            memory: "32Mi"
+            cpu: "50m"
+          limits:
+            memory: "96Mi"
+            cpu: "100m"
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
