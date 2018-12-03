@@ -29,7 +29,7 @@ spec:
       - image: ivories/mysql:latest
         imagePullPolicy: Always
         name: mysql
-        command: [ "mysqld", "--user=mysql" ]
+        command: [ "mysqld", "--user=root" ]
         securityContext:
           privileged: true
         env: 
