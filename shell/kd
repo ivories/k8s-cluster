@@ -5,7 +5,7 @@ usage()
   echo "    kd something=> kubectl delete something"
 }
 
-if [ $# -gt 1 ]; then
+if [ $# -ge 1 ]; then
   kubectl delete  $@
 else
   usage
