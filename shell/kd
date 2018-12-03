@@ -1,0 +1,13 @@
+#!/bin/bash
+usage()
+{
+  echo "usage:"
+  echo "    kd something=> kubectl delete something"
+}
+
+if [ $# -gt 1 ]; then
+  kubectl delete  $@
+else
+  usage
+fi
+

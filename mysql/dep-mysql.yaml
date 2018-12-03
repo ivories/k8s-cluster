@@ -29,6 +29,8 @@ spec:
       - image: ivories/mysql:latest
         imagePullPolicy: Always
         name: mysql
+        securityContext:
+          privileged: true
         env: 
         - name: MYSQL_ROOT_PASSWORD
           value: yellow 
