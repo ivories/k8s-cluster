@@ -36,16 +36,16 @@ spec:
         env: 
         - name: MYSQL_ROOT_PASSWORD
           value: yellow 
-        volumeMounts:
+        #volumeMounts:
         #- name: nfsd
         #  mountPath: /etc/mysql
         #  subPath: mysql
         #- name: nfsd
         #  mountPath: /var/lib/mysql
         #  subPath: mysql/data
-        - name: nfsd
-          mountPath: /var/log/mysql
-          subPath: mysql/log
+        #- name: nfsd
+        #  mountPath: /var/log/mysql
+        #  subPath: mysql/log
         #resources: 
         #  requests:
         #    memory: "32Mi"
