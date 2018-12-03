@@ -10,5 +10,6 @@ if [ $# == 1 ]; then
   kubectl get  $1
 else
   usage
+  kubectl get pod,svc,pv,pvc,node,rc,sc
 fi
 
