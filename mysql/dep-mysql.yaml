@@ -29,20 +29,20 @@ spec:
       - image: lyclyc88/mysql:latest
         imagePullPolicy: Always
         name: mysql
-        command: ["mysqld"]
-        args: ["--user=root","--datadir=/mysql/data","--defaults-file=/etc/mysql/my.cnf"]
+        #command: ["mysqld"]
+        args: ["--user=root"]
         securityContext:
           privileged: true
         env: 
         - name: MYSQL_ROOT_PASSWORD
           value: yellow 
         volumeMounts:
+        #- name: nfsd
+        #  mountPath: /etc/mysql
+        #  subPath: mysql
         - name: nfsd
-          mountPath: /etc/mysql
+          mountPath: /mysql    #/var/lib/mysql
           subPath: mysql
-        - name: nfsd
-          mountPath: /mysql/data    #/var/lib/mysql
-          subPath: mysql/data
         #- name: nfsd
         #  mountPath: /var/log/mysql
         #  subPath: mysql/log
