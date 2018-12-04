@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -d /mysql ]; then
+if [ -d /mysql/data ]; then
   echo "[i] MySQL directory already present, skipping creation"
 else
   echo "[i] MySQL data directory not found, creating initial DBs"
