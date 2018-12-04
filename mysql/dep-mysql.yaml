@@ -30,7 +30,7 @@ spec:
         imagePullPolicy: Always
         name: mysql
         #command: ["mysqld"]
-        args: ["--user=root"]
+        #args: ["--user=root"]
         securityContext:
           privileged: true
         env: 
