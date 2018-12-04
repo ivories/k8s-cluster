@@ -30,7 +30,7 @@ spec:
         imagePullPolicy: Always
         name: mysql
         command: ["mysqld"]
-        args: ["--user=root","--datadir=/var/lib/mysql"]
+        args: ["--user=root","--datadir=/mysql/data","--defaults-file=/etc/mysql/my.cnf"]
         securityContext:
           privileged: true
         env: 
