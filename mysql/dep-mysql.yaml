@@ -41,7 +41,7 @@ spec:
           mountPath: /etc/mysql
           subPath: mysql
         - name: nfsd
-          mountPath: /var/lib/mysql
+          mountPath: /mysql/data    #/var/lib/mysql
           subPath: mysql/data
         #- name: nfsd
         #  mountPath: /var/log/mysql
