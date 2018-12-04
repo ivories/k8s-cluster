@@ -39,7 +39,7 @@ spec:
         volumeMounts:
         - name: nfsd
           mountPath: /etc/mysql
-          subPath: mysql/conf
+          subPath: mysql
         - name: nfsd
           mountPath: /var/lib/mysql
           subPath: mysql/data
