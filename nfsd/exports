@@ -1,2 +1,3 @@
-#/nfsshare *(rw,fsid=0,async,no_subtree_check,no_auth_nlm,insecure,no_root_squash)
 /nfsshare *(rw,fsid=0,sync,no_subtree_check,no_auth_nlm,insecure,no_root_squash)
+
+#TODO mysql的ibdata1在NFS文件系统下生成失败的问题待解决
