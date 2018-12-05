@@ -1,0 +1,20 @@
+#!/bin/bash
+usage()
+{
+  echo "usage:"
+  echo "    drmi image_id ...  => docker rmi image_id && .."
+  echo "\"name\" is a name of the docker IMAGE ID."
+}
+
+if [ $# -gt 0 ];then
+  args="$@"
+  for arg in $args;do
+    tmp="docker rmi ${arg} && ${tmp} "
+  done
+  tmp="echo \"${tmp}\""
+  $tmp
+else
+  usage
+fi
+
+
