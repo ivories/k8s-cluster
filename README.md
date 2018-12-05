@@ -11,6 +11,10 @@ cd core
 
 sudo git clone https://github.com/lyclyc88/k8s-cluster.git data
 
+cd ~/
+
+ln -s /home/core/data/shell/.bash_aliases .bash_aliases 
+
 ### run nfsd 
 #### in docker
 docker stop nfsd && docker rm nfsd
