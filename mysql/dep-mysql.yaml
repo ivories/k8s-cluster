@@ -40,9 +40,9 @@ spec:
         #- name: nfsd
         #  mountPath: /etc/mysql
         #  subPath: mysql
-        - name: nfsd
-          mountPath: /mysql   #/var/lib/mysql
-          subPath: mysql
+        #- name: nfsd
+        #  mountPath: /mysql   #/var/lib/mysql
+        #  subPath: mysql
         #- name: nfsd
         #  mountPath: /var/log/mysql
         #  subPath: mysql/log
