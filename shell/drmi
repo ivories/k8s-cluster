@@ -9,10 +9,8 @@ usage()
 if [ $# -gt 0 ];then
   args="$@"
   for arg in $args;do
-    tmp="docker rmi ${arg} && ${tmp} "
+    docker rmi ${arg}
   done
-  tmp="echo \"${tmp}\""
-  $tmp
 else
   usage
 fi
