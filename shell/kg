@@ -1,5 +1,5 @@
 #!/bin/bash
-opt="pod,svc,pv,pvc,node,rc,sc,ds,sa"
+opt="pod,svc,pv,pvc,node,rc,sc,ds,sa,ep"
 usage()
 {
   echo "usage:"
