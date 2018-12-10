@@ -10,7 +10,7 @@ spec:
     storage: 10Gi
   accessModes:
   - ReadWriteOnce        #GCE 仅支持ReadWriteOnce,ReadOnlyMany,不支持ReadWriteMany
-  persistentVolumeReclaimPolicy: Delete  
+  #persistentVolumeReclaimPolicy: Delete  
   #storageClassName: slow
   gcePersistentDisk:
     pdName: gce-disk
