@@ -7,7 +7,7 @@ spec:
   capacity:
     storage: 10Gi
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   gcePersistentDisk:
     pdName: gce-disk
     fsType: ext4
