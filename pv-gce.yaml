@@ -3,6 +3,7 @@ kind: PersistentVolume
 metadata:
   name: pv-gce
   namespace: default
+  release: "stable"
 spec:
   capacity:
     storage: 10Gi
