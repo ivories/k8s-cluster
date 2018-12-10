@@ -24,7 +24,7 @@ spec:
       volumes:
       - name: gce-pvc
         persistentVolumeClaim:
-          claimName: gce-pvc
+          claimName: pvc-gce
       containers:
       - image: lyclyc88/mysql:latest
         imagePullPolicy: Always
