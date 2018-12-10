@@ -22,9 +22,9 @@ spec:
         app: mysql
     spec:
       volumes:
-      - name: nfsd
+      - name: gce-pvc
         persistentVolumeClaim:
-          claimName: nfsd
+          claimName: gce-pvc
       containers:
       - image: lyclyc88/mysql:latest
         imagePullPolicy: Always
@@ -37,15 +37,15 @@ spec:
         - name: MYSQL_ROOT_PASSWORD
           value: yellow 
         volumeMounts:
-        - name: nfsd
+        - name: gce-pvc
           mountPath: /etc/mysql
           subPath: mysql
-        - name: nfsd
+        - name: gce-pvc
           mountPath: /mysql   #/var/lib/mysql
           subPath: mysql
-        #- name: nfsd
-        #  mountPath: /var/log/mysql
-        #  subPath: mysql/log
+        - name: nfsd
+          mountPath: /var/log/mysql
+          subPath: mysql/log
         #resources: 
         #  requests:
         #    memory: "32Mi"
