@@ -54,7 +54,7 @@ sudo mount -v -o vers=4,loud 172.18.0.2:/ /data
 ## auto create disk for pod to use
 ### execute in k8s master: kc pvc-auto-gce.yaml
 
-## static create disk for pod to use  --> see https://my.oschina.net/styshoo/blog/1329693
+## manually create disk for pod to use  --> see https://my.oschina.net/styshoo/blog/1329693
 ### first
 ##### execute in k8s master: gcloud compute disks create --size=10GB gce-disk
 ##### or create on GCP->disk
