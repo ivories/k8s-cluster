@@ -2,6 +2,7 @@
 about yaml for k8s cluster 
 
 
+
 ## init --> Execution in command line
 cd /home 
 
@@ -15,7 +16,7 @@ cd ~/
 
 ln -s /home/core/data/shell/.bash_aliases .bash_aliases 
 
-### run nfsd 
+## run nfsd 
 #### in docker
 docker stop nfsd && docker rm nfsd
 
