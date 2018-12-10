@@ -4,7 +4,7 @@ metadata:
   name: pv-gce
   namespace: default
   labels: 
-    release: stable
+    release: "stable"
 spec:
   capacity:
     storage: 10Gi
