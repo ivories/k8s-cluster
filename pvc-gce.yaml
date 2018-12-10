@@ -7,8 +7,8 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 5Gi
+      storage: 10Gi
   #storageClassName: slow
   selector:
     matchLabels:
-      release: "stable"
+      release: stable
