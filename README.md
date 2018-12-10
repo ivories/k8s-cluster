@@ -1,8 +1,8 @@
 # k8s-cluster
 about yaml for k8s cluster 
-
-
-
+ 
+ 
+ 
 ## init --> Execution in command line
 cd /home 
 
@@ -48,9 +48,9 @@ sudo mount -v -o vers=4,loud 172.18.0.2:/ /data
 
 #### in k8s
 #### client mount in k8s
-
-
-
+ 
+ 
+ 
 ## create disk for pod to use  --> see https://my.oschina.net/styshoo/blog/1329693
 ### first
 ##### execute in k8s master: gcloud compute disks create --size=10GB gce-disk
