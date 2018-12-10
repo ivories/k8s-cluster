@@ -46,9 +46,12 @@ or
 sudo mount -v -o vers=4,loud 172.18.0.2:/ /data
 
 #### in k8s
-
-
 #### client mount in k8s
+
+
+
+## create disk for pod to use  --> see https://my.oschina.net/styshoo/blog/1329693
+### execute in k8s master: gcloud compute disks create --size=10GB share-disk
 
 
 
