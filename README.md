@@ -56,7 +56,7 @@ sudo mount -v -o vers=4,loud 172.18.0.2:/ /data
 ##### execute in k8s master: gcloud compute disks create --size=10GB gce-disk
 ##### or create on GCP->disk
 ### second
-##### execute in k8s master: kubectl create -f pv-gce.yaml
+##### execute in k8s master: kc pv-gce.yaml
 
 
 
