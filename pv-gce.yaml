@@ -3,6 +3,7 @@ kind: PersistentVolume
 metadata:
   name: pv-gce
   namespace: default
+  annotations: volume.beta.kubernetes.io/storage-provisioner=kubernetes.io/gce-pd
   labels: 
     release: stable
 spec:
