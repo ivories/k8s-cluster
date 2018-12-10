@@ -43,7 +43,7 @@ spec:
         - name: gce-pvc
           mountPath: /mysql   #/var/lib/mysql
           subPath: mysql
-        - name: nfsd
+        - name: gce-pvc
           mountPath: /var/log/mysql
           subPath: mysql/log
         #resources: 
