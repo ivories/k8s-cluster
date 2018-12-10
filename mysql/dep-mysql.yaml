@@ -22,7 +22,7 @@ spec:
         app: mysql
     spec:
       volumes:
-      - name: gce-pvc
+      - name: pvc-gce
         persistentVolumeClaim:
           claimName: pvc-gce
       containers:
@@ -37,13 +37,13 @@ spec:
         - name: MYSQL_ROOT_PASSWORD
           value: yellow 
         volumeMounts:
-        - name: gce-pvc
+        - name: pvc-gce
           mountPath: /etc/mysql
           subPath: mysql
-        - name: gce-pvc
+        - name: pvc-gce
           mountPath: /mysql   #/var/lib/mysql
           subPath: mysql
-        - name: gce-pvc
+        - name: pvc-gce
           mountPath: /var/log/mysql
           subPath: mysql/log
         #resources: 
