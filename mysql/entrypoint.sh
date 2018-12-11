@@ -46,8 +46,8 @@ EOF
   rm -f $tfile
 fi
 
-
-exec /usr/bin/mysqld --user=root --console
+chown -R mysql:mysql /mysql/
+exec /usr/bin/mysqld --user=mysql --console
 
 
 ##!/bin/sh
