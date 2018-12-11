@@ -25,8 +25,8 @@ flush privileges;
 DELETE FROM mysql.user ;
 CREATE USER 'root'@'%' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}' ;
 GRANT ALL ON *.* TO 'root'@'%' WITH GRANT OPTION ;
-CREATE USER 'root'@'localhost' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}' ;
-GRANT ALL ON *.* TO 'root'@'localhost' WITH GRANT OPTION ;
+#CREATE USER 'root'@'localhost' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}' ;
+#GRANT ALL ON *.* TO 'root'@'localhost' WITH GRANT OPTION ;
 DROP DATABASE IF EXISTS test ;
 EOF
   if [ "$MYSQL_DATABASE" ]; then
