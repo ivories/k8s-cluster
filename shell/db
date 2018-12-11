@@ -1,3 +1,26 @@
 #!/bin/bash
 
+kd deployment $1
+
+kd pv pv-gce
+
+kd pvc pvc-gce
+
+gcloud compute disks delete gce-disk --zone=asia-east1-c
+
+cd /home/core/data/$1
+
+sudo git pull 
+
+docker rmi lyclyc88/$1
+
 docker build -t lyclyc88/$1 .
+
+docker push lyclyc88/$1:latest
+
+echo "init disk pvc pv mysql"
+gcloud compute disks create --size=10GB --zone=asia-east1-c  gce-disk
+cd /home/core/data
+kc pvc-gce.yaml
+kc pv-gce.yaml
+kc mysql/dep-mysql.yaml
