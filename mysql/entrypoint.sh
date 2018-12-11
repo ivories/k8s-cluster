@@ -4,17 +4,17 @@ if [ -d /mysql/data/mysql ]; then
   echo "[i] MySQL directory already present, skipping creation"
 else
   echo "[i] MySQL data directory not found, creating initial DBs"
+  
+  if [ -z "$MYSQL_ROOT_PASSWORD" -a -z "$MYSQL_ALLOW_EMPTY_PASSWORD" ]; then
+    echo >&2 'error: database is uninitialized and MYSQL_ROOT_PASSWORD not set'
+    echo >&2 'Did you forget to add -e MYSQL_ROOT_PASSWORD=... ?'
+    exit 1
+  fi
+  
   echo 'Initializing database'
   mysql_install_db --user=root > /dev/null
   echo 'Database initialized'
-  #sed -i "s/\/run\/mysqld\/mysqld\.sock/$(echo $DATADIR | sed -e 's/\\/\\\\/g' -e 's/\//\\\//g' -e 's/&/\\\&/g')mysqld\.sock/" /etc/mysql/my.cnf
-  sed -i "s/\/run\/mysqld\/mysqld\.sock/\/mysql\/mysqld\.sock/" /etc/mysql/my.cnf
   
-  if [ "$MYSQL_ROOT_PASSWORD" = "" ]; then
-    MYSQL_ROOT_PASSWORD=111111
-    echo "[i] MySQL root Password: $MYSQL_ROOT_PASSWORD"
-  fi
-
   tfile=`mktemp`
   if [ ! -f "$tfile" ]; then
       return 1
