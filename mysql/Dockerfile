@@ -1,8 +1,10 @@
 FROM alpine:latest
 
-COPY ./entrypoint.sh /
+RUN apk add --update mariadb mysql-client \
+    && rm -f /var/cache/apk/* \
+    && chown -R mysql:mysql /mysql/
 
-RUN apk add --update mariadb mysql-client && rm -f /var/cache/apk/*
+COPY entrypoint.sh /
 COPY my.cnf /etc/mysql/my.cnf
 
 EXPOSE 3306
