@@ -1,12 +1,21 @@
 #!/bin/sh
 
+
+
+DATADIR="$("$@" --verbose --help 2>/dev/null | awk '$1 == "datadir" { print $2; exit }')"
+
+echo $DATADIR
+
+sleep 10
+
 if [ -d /mysql/data/mysql ]; then
   echo "[i] MySQL directory already present, skipping creation"
 else
   echo "[i] MySQL data directory not found, creating initial DBs"
-
+  echo 'Initializing database'
   mysql_install_db --user=root > /dev/null
-
+  echo 'Database initialized'
+  sed -i "s/\/run\/mysqld\/mysqld\.sock/$(echo $DATADIR | sed -e 's/\\/\\\\/g' -e 's/\//\\\//g' -e 's/&/\\\&/g')mysqld\.sock/" /etc/mysql/my.cnf
   if [ "$MYSQL_ROOT_PASSWORD" = "" ]; then
     MYSQL_ROOT_PASSWORD=111111
     echo "[i] MySQL root Password: $MYSQL_ROOT_PASSWORD"
