@@ -1,6 +1,6 @@
 #!/bin/sh
 
-
+rm -rf /mysql/data
 
 DATADIR="$("$@" --verbose --help 2>/dev/null | awk '$1 == "datadir" { print $2; exit }')"
 
