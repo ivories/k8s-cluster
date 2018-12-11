@@ -12,7 +12,7 @@ else
   fi
   
   echo 'Initializing database'
-  mysql_install_db --user=root > /dev/null
+  mysql_install_db --user=root --skip-grant-tables > /dev/null
   echo 'Database initialized'
   
   tfile=`mktemp`
