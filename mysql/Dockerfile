@@ -1,8 +1,8 @@
 FROM alpine:latest
 
-RUN apk add --update mariadb mysql-client \
-    && rm -f /var/cache/apk/* \
-    && chown -R mysql:mysql /mysql/
+RUN apk add --update mariadb mysql-client 
+    \ && rm -f /var/cache/apk/* 
+    #\ && chown -R mysql:mysql /mysql/
 
 COPY entrypoint.sh /
 COPY my.cnf /etc/mysql/my.cnf
