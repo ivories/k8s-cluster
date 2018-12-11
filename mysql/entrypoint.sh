@@ -1,6 +1,4 @@
 #!/bin/sh
-rm -rf /mysql/data/
-exit 1
 
 if [ -d /mysql/data/mysql ]; then
   echo "[i] MySQL directory already present, skipping creation"
