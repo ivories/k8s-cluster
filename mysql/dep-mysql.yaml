@@ -39,10 +39,10 @@ spec:
         volumeMounts:
         - name: pvc-gce
           mountPath: /etc/mysql
-          subPath: mysql
+          subPath: mysql/conf
         - name: pvc-gce
           mountPath: /mysql   #/var/lib/mysql
-          subPath: mysql
+          subPath: mysql/data
         - name: pvc-gce
           mountPath: /var/log/mysql
           subPath: mysql/log
