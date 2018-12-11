@@ -12,7 +12,7 @@ else
   fi
   
   echo 'Initializing database'
-  mysql_install_db --user=root --skip-grant-tables > /dev/null
+  mysql_install_db --user=root > /dev/null
   echo 'Database initialized'
   
   tfile=`mktemp`
@@ -21,6 +21,7 @@ else
   fi
 
   cat << EOF > $tfile
+flush privileges;
 DELETE FROM mysql.user ;
 CREATE USER 'root'@'%' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}' ;
 GRANT ALL ON *.* TO 'root'@'%' WITH GRANT OPTION ;
