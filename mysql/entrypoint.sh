@@ -26,22 +26,23 @@ else
   fi
 
   cat << EOF > $tfile
-USE mysql;
-FLUSH PRIVILEGES;
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY "$MYSQL_ROOT_PASSWORD" WITH GRANT OPTION;
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;
-UPDATE user SET password=PASSWORD("") WHERE user='root' AND host='localhost';
+DELETE FROM mysql.user ;
+CREATE USER 'root'@'%' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}' ;
+GRANT ALL ON *.* TO 'root'@'%' WITH GRANT OPTION ;
+DROP DATABASE IF EXISTS test ;
 EOF
-
-  if [ "$MYSQL_DATABASE" != "" ]; then
-    echo "[i] Creating database: $MYSQL_DATABASE"
-    echo "CREATE DATABASE IF NOT EXISTS \`$MYSQL_DATABASE\` CHARACTER SET utf8 COLLATE utf8_general_ci;" >> $tfile
-
-    if [ "$MYSQL_USER" != "" ]; then
-      echo "[i] Creating user: $MYSQL_USER with password $MYSQL_PASSWORD"
-      echo "GRANT ALL ON \`$MYSQL_DATABASE\`.* to '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';" >> $tfile
+  if [ "$MYSQL_DATABASE" ]; then
+    echo "CREATE DATABASE IF NOT EXISTS \`$MYSQL_DATABASE\` ;" >> "$tfile"
+  fi
+    
+  if [ "$MYSQL_USER" -a "$MYSQL_PASSWORD" ]; then
+    echo "CREATE USER '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD' ;" >> "$tfile"
+    if [ "$MYSQL_DATABASE" ]; then
+      echo "GRANT ALL ON \`$MYSQL_DATABASE\`.* TO '$MYSQL_USER'@'%' ;" >> "$tfile"
     fi
   fi
+    
+  echo 'FLUSH PRIVILEGES ;' >> "$tfile"
 
   /usr/bin/mysqld --user=root --bootstrap --verbose=0 < $tfile
   rm -f $tfile
