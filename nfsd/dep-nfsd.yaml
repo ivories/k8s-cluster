@@ -1,0 +1,61 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: nfsd
+  name: nfsd
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nfsd
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mysql
+    spec:
+      volumes:
+      - name: pvc-gce
+        persistentVolumeClaim:
+          claimName: pvc-gce
+      containers:
+      - name: nfsd
+        image: itsthenetwork/nfs-server-alpine
+        ports: 
+        - name: tcp111 
+         containerPort: 111   #容器需要开放的端口
+         protocol: TCP
+        - name: udp111 
+           containerPort: 111   #容器需要开放的端口
+         protocol: UDP
+        - name: tcp2049
+         containerPort: 2049   #容器需要开放的端口
+         protocol: TCP
+        - name: udp2049
+          containerPort: 2049   #容器需要开放的端口
+          protocol: UDP
+        env:
+        - name: SHARED_DIRECTORY
+          value: /nfsshare
+        imagePullPolicy: Always
+        securityContext: 
+          privileged: true
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - name: nfsshare
+      mountPath: /nfsshare
+  volumes:
+  - name: nfsshare
+    hostPath: 
+      path: /home/core/data
+#  volumes:
+#  - name: nfsshare
+#    emptyDir: {}
+#  volumes:
+#  - name: nfsshare
+#    persistentVolumeClaim: 
+#      claimName: pvc
