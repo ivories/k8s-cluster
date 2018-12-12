@@ -1,5 +1,7 @@
 #!/bin/sh
 
+chown -R mysql:mysql /mysql
+
 if [ -d /mysql/data/mysql ]; then
   echo "[i] MySQL directory already present, skipping creation"
 else
@@ -46,7 +48,6 @@ EOF
   rm -f $tfile
 fi
 
-chown -R mysql:mysql /mysql
 exec /usr/bin/mysqld --user=mysql --console
 
 
