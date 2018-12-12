@@ -31,8 +31,8 @@ spec:
         name: mysql
         #command: ["mysqld"]
         #args: ["--user=root"]
-        securityContext:
-          privileged: true
+        #securityContext:
+        #  privileged: true
         env: 
         - name: MYSQL_ROOT_PASSWORD
           value: yellow 
