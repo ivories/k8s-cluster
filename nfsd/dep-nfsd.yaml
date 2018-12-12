@@ -14,7 +14,7 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: mysql
+        app: nfsd
     spec:
       containers:
       - name: nfsd
