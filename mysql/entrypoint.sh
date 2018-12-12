@@ -12,7 +12,7 @@ else
   fi
   
   echo 'Initializing database'
-  mysql_install_db --user=root > /dev/null
+  mysql_install_db --user=mysql > /dev/null
   echo 'Database initialized'
   
   tfile=`mktemp`
@@ -42,7 +42,7 @@ EOF
     
   echo 'FLUSH PRIVILEGES ;' >> "$tfile"
 
-  /usr/bin/mysqld --user=root --bootstrap --verbose=0 < $tfile
+  /usr/bin/mysqld --user=mysql --bootstrap --verbose=0 < $tfile
   rm -f $tfile
 fi
 
