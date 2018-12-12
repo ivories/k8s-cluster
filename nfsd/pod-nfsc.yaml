@@ -28,5 +28,5 @@ spec:
     emptyDir: {}
   - name: data
     nfs:
-      server: 10.31.253.195  #集群IP，集群内跨节点访问 #10.28.3.11 节点IP，节点内跨pod访问
+      server: nfsd #10.31.253.195  #集群IP，集群内跨节点访问 #10.28.3.11 节点IP，节点内跨pod访问
       path: /
