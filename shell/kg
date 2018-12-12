@@ -1,16 +1,15 @@
 #!/bin/bash
-opt="pod,svc,pv,pvc,node,rc,sc,ds,sa,ep"
 usage()
 {
   echo "usage:"
   echo "    kg something=> kubectl get something"
-  echo "\"something\" is the name in \"${opt}\" list."
+  echo "\"something\" is the name in \"kg -h or kubectl get -h\"."
 }
 
 if [ $# == 1 ]; then
   kubectl get  $1
 else
   usage
-  kubectl get $opt
+  kubectl get all
 fi
 

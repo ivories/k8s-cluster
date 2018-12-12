@@ -6,6 +6,8 @@ kd pv pv-gce
 
 kd pvc pvc-gce
 
+sleep 15
+
 gcloud compute disks delete gce-disk --zone=asia-east1-c
 
 cd /home/core/data/$1
