@@ -9,21 +9,21 @@ spec:
   - name: tcp111
     protocol: TCP
     port: 111          #集群开放的端口 
-    nodePort: 30111    #节点上开放的端口
+    #nodePort: 30111    #节点上开放的端口
     targetPort: 111    #指向目标容器端口 
   - name: tcp2049
     protocol: TCP 
     port: 2049         #集群开放的端口 
-    nodePort: 32049    #节点上开放的端口
+    #nodePort: 32049    #节点上开放的端口
     targetPort: 2049   #指向目标容器端口
   - name: udp111
     protocol: UDP
     port: 111          #集群开放的端口
-    nodePort: 30111    #节点上开放的端口
+    #nodePort: 30111    #节点上开放的端口
     targetPort: 111    #指向目标容器端口
   - name: udp2049
     protocol: UDP
     port: 2049         #集群开放的端口
-    nodePort: 32049    #节点上开放的端口
+    #nodePort: 32049    #节点上开放的端口
     targetPort: 2049   #指向目标容器端口
-  type: NodePort
+  #type: NodePort
