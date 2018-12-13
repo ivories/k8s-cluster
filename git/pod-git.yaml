@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: git
+  name: git
+  namespace: default
+spec:
+  containers:
+  - name: git
+    image: lyclyc88/git
+    imagePullPolicy: Always
+    securityContext: 
+      privileged: false
+    resources: {}
+    volumeMounts:
+    - name: nfsd
+      mountPath: /home/core/data
+  volumes:
+  - name: nfsd
+    persistentVolumeClaim:
+      claimName: nfsd
