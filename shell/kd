@@ -4,6 +4,7 @@ usage()
   echo "usage:"
   echo "    kd something=> kubectl delete something"
   echo "more info,see:\"kubectl delete -h\" or \"kd -h\""
+  echo ""
 }
 
 if [ $# -ge 1 ]; then
