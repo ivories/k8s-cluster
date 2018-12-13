@@ -4,6 +4,7 @@ usage()
   echo "usage:"
   echo "    drm name1 ... => docker stop name1 && docker stop name1 && .."
   echo "\"name\" is a name of the doker name."
+  echo ""
 }
 
 if [ $# -gt 0 ];then
