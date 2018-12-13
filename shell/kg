@@ -4,6 +4,7 @@ usage()
   echo "usage:"
   echo "    kg something=> kubectl get something"
   echo "\"something\" is the name in \"kg -h or kubectl get -h\"."
+  echo ""
 }
 
 if [ $# == 1 ]; then
