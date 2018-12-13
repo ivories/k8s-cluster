@@ -4,7 +4,9 @@ usage()
   echo "usage:"
   echo "    kl something=> kubectl logs something"
   echo "\"something\" is the name in \"kubectl get pods\" list."
+  echo ""
   kubectl get pods
+  echo ""
 }
 
 if [ $# == 1 ]; then
