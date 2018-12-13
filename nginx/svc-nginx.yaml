@@ -11,6 +11,4 @@ spec:
   ports:
   - port: 80
     protocol: TCP
-  #clusterIP: 10.0.171.239
-  #loadBalancerIP: 78.11.24.19
   
