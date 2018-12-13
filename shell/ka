@@ -5,6 +5,7 @@ usage()
   echo "    ka something                 => kubectl apply -f something"
   echo "    ka something1 something1 ... => kubectl apply -f something1 -f something ..."
   echo "\"something\" is a name of the config file."
+  echo ""
 }
 
 if [ $# -gt 0 ];then 
