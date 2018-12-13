@@ -15,7 +15,7 @@ spec:
     resources: {}
     volumeMounts:
     - name: nfsd
-      mountPath: /home/core/data
+      mountPath: /git
   volumes:
   - name: nfsd
     persistentVolumeClaim:
