@@ -5,8 +5,11 @@ usage()
   echo "    ke something             => kubectl exec -it something sh"
   echo "    ke something dosomething => kubectl exec -it something dosomething"
   echo "\"something\" is the name in \"kubectl get pods\" list."
+  echo ""
   kubectl get pods
+  echo ""
   echo "\"dosomething\" is a command that execution after entry."
+  echo ""
 }
 
 if [ $# == 1 ]; then
