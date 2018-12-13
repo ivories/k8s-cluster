@@ -4,7 +4,9 @@ usage()
   echo "usage:"
   echo "    kds ssomething=> kubectl describe something"
   echo "more info,see:\"kubectl describe -h\" or \"kds -h\""
+  echo ""
   kubectl describe -h
+  echo ""
 }
 
 if [ $# -ge 1 ]; then
