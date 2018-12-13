@@ -5,6 +5,7 @@ usage()
   echo "    kc something                 => kubectl create -f something"
   echo "    kc something1 something1 ... => kubectl create -f something1 -f something ..."
   echo "\"something\" is a name of the config file."
+  echo ""
 }
 
 if [ $# -gt 0 ];then 
