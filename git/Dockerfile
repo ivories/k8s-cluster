@@ -10,5 +10,5 @@ RUN apk add --no-cache git && \
 VOLUME /git
 WORKDIR /git
 
-ENTRYPOINT ["while true ;do  sleep 10; done"]
+ENTRYPOINT ["sh","while true ;do  sleep 10; done"]
 #CMD ["--help"]
