@@ -1,6 +1,10 @@
 # Add a git client to the base image
 FROM alpine:latest
-COPY hold.sh /git 
+
+VOLUME /git
+WORKDIR /git
+COPY hold.sh /git
+
 #Add git client
 RUN apk add --no-cache git && \
     apk add --no-cache openssh-client && \
