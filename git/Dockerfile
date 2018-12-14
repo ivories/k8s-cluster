@@ -10,5 +10,5 @@ RUN apk add --no-cache git && \
 VOLUME /git
 WORKDIR /git
 
-ENTRYPOINT ["git"]
-CMD ["--help"]
+ENTRYPOINT ["sh"]
+#CMD ["--help"]
