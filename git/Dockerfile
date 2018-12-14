@@ -1,14 +1,12 @@
 # Add a git client to the base image
 FROM alpine:latest
 
-VOLUME /git
-WORKDIR /git
-COPY hold.sh /git
+COPY hold.sh /
 
 #Add git client
 RUN apk add --no-cache git && \
     apk add --no-cache openssh-client && \
-    chmod +x /git/hold.sh
+    chmod +x /hold.sh
    
 #do not use strict host key check 
     #echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config 
@@ -16,5 +14,5 @@ RUN apk add --no-cache git && \
 VOLUME /git
 WORKDIR /git
 
-ENTRYPOINT ["/git/hold.sh"]
+ENTRYPOINT ["/hold.sh"]
 #CMD ["--help"]
