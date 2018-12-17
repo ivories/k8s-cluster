@@ -33,13 +33,13 @@ spec:
         volumeMounts:
         - name: local
           mountPath: /etc/ceph
-          subPath: /ceph
+          subPath: ceph
         - name: local
           mountPath: /var/lib/ceph
-          subPath: /ceph
+          subPath: ceph
         - name: local
           mountPath: /etc/ganesha
-          subPath: /ceph
+          subPath: ceph
       volumes:
       - name: local
         hostPath: 
