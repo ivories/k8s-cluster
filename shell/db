@@ -1,2 +1,8 @@
 #!/bin/bash
+
+docker rmi lyclyc88/$1
+
 docker build -t lyclyc88/$1 .
+
+docker push lyclyc88/$1:latest
+

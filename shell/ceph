@@ -1,0 +1,8 @@
+docker run -d --net=host \
+-v /home/core/data/ceph:/etc/ceph \
+-v /home/core/data/ceph:/var/lib/ceph/ \
+ceph/daemon mgr
+
+#docker run -d --pid=host  --net=host -v /home/core/data/ceph:/data  ceph/daemon osd
+
+#docker run -d --net=host  -v /etc/ceph:/home/core/data/ceph  -v /var/lib/ceph/:/home/core/data/ceph lyclyc88/ceph osd
