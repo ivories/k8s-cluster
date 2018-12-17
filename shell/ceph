@@ -1,8 +1,17 @@
-docker run -d --net=host \
+sudo docker run -d --net=host  --name=mon \
 -v /home/core/data/ceph:/etc/ceph \
--v /home/core/data/ceph:/var/lib/ceph/ \
-ceph/daemon mgr
+-v /home/core/data/ceph:/var/lib/ceph \
+-e MON_IP=10.140.0.7 \
+-e CEPH_PUBLIC_NETWORK=10.140.0.0/16 \
+ceph/daemon mon
 
-#docker run -d --pid=host  --net=host -v /home/core/data/ceph:/data  ceph/daemon osd
+
+
+#docker run -d --net=host \
+#-v /home/core/data/ceph:/etc/ceph \
+#-v /home/core/data/ceph:/var/lib/ceph/ \
+#ceph/daemon mgr
+
+#docker run -d --pid=host --name=ceph  --net=host -v /home/core/data/ceph:/data -v /home/core/data/ceph:/etc/ceph   ceph/daemon osd
 
 #docker run -d --net=host  -v /etc/ceph:/home/core/data/ceph  -v /var/lib/ceph/:/home/core/data/ceph lyclyc88/ceph osd
