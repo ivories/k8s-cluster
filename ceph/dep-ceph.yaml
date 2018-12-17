@@ -30,6 +30,20 @@ spec:
         resources: {}
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
+        volumeMounts:
+        - name: local
+          mountPath: /etc/ceph
+          subpath: /ceph
+        - name: local
+          mountPath: /var/lib/ceph
+          subpath: /ceph
+        - name: local
+          mountPath: /etc/ganesha
+          subpath: /ceph
+      volumes:
+      - name: local
+        hostPath: 
+        path: /home/core/data  
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
