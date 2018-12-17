@@ -24,6 +24,9 @@ spec:
       - image: ceph/daemon
         imagePullPolicy: Always
         name: ceph
+        env: 
+        - name: JOURNAL_DIR
+          value: /ceph 
         args: ["OSD"]
         securityContext:
           privileged: true
