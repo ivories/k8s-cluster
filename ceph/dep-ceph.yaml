@@ -24,6 +24,9 @@ spec:
       - image: ceph/daemon
         imagePullPolicy: Always
         name: ceph
+        args: ["OSD"]
+        securityContext:
+          privileged: true
         resources: {}
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
