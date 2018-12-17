@@ -24,9 +24,9 @@ spec:
       - image: ceph/daemon
         imagePullPolicy: Always
         name: ceph
-        env: 
-        - name: JOURNAL_DIR
-          value: /ceph 
+        #env: 
+        #- name: JOURNAL_DIR
+        #  value: /ceph 
         args: ["OSD"]
         securityContext:
           privileged: true
@@ -36,13 +36,13 @@ spec:
         volumeMounts:
         - name: local
           mountPath: /etc/ceph
-          subPath: ceph
+          subPath: ceph/etc/ceph
         - name: local
           mountPath: /var/lib/ceph
-          subPath: ceph
+          subPath: ceph/var/lib/ceph
         - name: local
           mountPath: /etc/ganesha
-          subPath: ceph
+          subPath: ceph/etc/ganesha
       volumes:
       - name: local
         #hostPath: 
