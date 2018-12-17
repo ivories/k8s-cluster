@@ -42,8 +42,9 @@ spec:
           subPath: ceph
       volumes:
       - name: local
-        hostPath: 
-          path: /home/core/data  
+        #hostPath: 
+        #  path: /home/core/data  
+        emptyDir: {}
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
