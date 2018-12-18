@@ -6,7 +6,7 @@
     --restart=always \
     --privileged=true \
     --pid=host \
-    -v /ceph/etc:/etc/ceph \
+    -v /etc/ceph:/etc/ceph \
     -v /var/lib/ceph:/var/lib/ceph \
     -v /var/log/ceph:/var/log/ceph \
     ceph/daemon osd_directory
