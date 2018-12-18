@@ -2,10 +2,7 @@
 docker run -d --net=host \
 --name=mon \
 --restart=always \
-#-v /etc/localtime:/etc/localtime \
-#-v /data/ceph/etc:/etc/ceph \
-#-v /data/ceph/lib:/var/lib/ceph \
-#-v /data/ceph/logs:/var/log/ceph \
+-v /var/log/ceph:/var/log/ceph \
 -v /etc/ceph:/etc/ceph \
 -v /var/lib/ceph:/var/lib/ceph \
 -e MON_IP=10.140.0.7,10.140.0.6,10.140.0.5 \
