@@ -1,9 +1,26 @@
-sudo docker run -d --net=host  --name=mon \
--v /home/core/data/ceph:/etc/ceph \
--v /home/core/data/ceph:/var/lib/ceph \
--e MON_IP=10.140.0.7 \
--e CEPH_PUBLIC_NETWORK=10.140.0.0/16 \
+#!/bin/bash
+docker run -d --net=host \
+--name=mon \
+--restart=always \
+#-v /etc/localtime:/etc/localtime \
+#-v /data/ceph/etc:/etc/ceph \
+#-v /data/ceph/lib:/var/lib/ceph \
+#-v /data/ceph/logs:/var/log/ceph \
+-v /etc/ceph:/etc/ceph \
+-v /var/lib/ceph:/var/lib/ceph \
+-e MON_IP=10.140.0.7,10.140.0.6,10.140.0.5 \
+-e CEPH_PUBLIC_NETWORK=10.140.0.0/24 \
 ceph/daemon mon
+
+
+
+
+#sudo docker run -d --net=host  --name=mon \
+#-v /home/core/data/ceph:/etc/ceph \
+#-v /home/core/data/ceph:/var/lib/ceph \
+#-e MON_IP=10.140.0.7 \
+#-e CEPH_PUBLIC_NETWORK=10.140.0.0/16 \
+#ceph/daemon mon
 
 
 
