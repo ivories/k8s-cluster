@@ -1,11 +1,11 @@
 
-sudo  git config --global user.email "lyclyc88@126.com"
-sudo  git config --global user.name "Eric.Liu"
+git config --global user.email "lyclyc88@126.com"
+git config --global user.name "Eric.Liu"
 
 export PATH=$PATH:/home/core/data/shell
 
 ###GlusterFS Heketi###
-export HEKETI_CLI_SERVER=$(kubectl get svc/heketi --template 'http://{{.spec.clusterIP}}:{{(index .spec.ports 0).port}}')
+#export HEKETI_CLI_SERVER=$(kubectl get svc/heketi --template 'http://{{.spec.clusterIP}}:{{(index .spec.ports 0).port}}')
 
 ###Vi###
 alias svi='sudo vi'
