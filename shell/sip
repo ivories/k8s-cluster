@@ -1,0 +1,17 @@
+#!/bin/bash
+
+usage()
+{
+  echo "usage:"
+  echo "   showip name"
+  echo "name is the key name fo Network card in \"ifconfig\""
+  echo ""
+}
+
+if [ $# = 1 ]; then
+echo  `ifconfig -s | grep ${1} | cut -d ' ' -f 1 \
+     | xargs ifconfig | grep inet | grep -v inet6 \
+     | sed -E 's/inet[^0-9]*([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}).*/\1/;s/^[[:blank:]]*//'`
+else 
+  usage
+fi
