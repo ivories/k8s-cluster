@@ -9,4 +9,4 @@
     -v /ceph/etc:/etc/ceph \
     -v /var/lib/ceph:/var/lib/ceph \
     -v /var/log/ceph:/var/log/ceph \
-    ceph/deamon  osd_directory
+    ceph/daemon osd_directory
