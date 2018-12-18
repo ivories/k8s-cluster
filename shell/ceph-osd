@@ -1,0 +1,12 @@
+#!/bin/bash
+
+    docker run -d \
+    --name=osd \
+    --net=host \
+    --restart=always \
+    --privileged=true \
+    --pid=host \
+    -v /ceph/etc:/etc/ceph \
+    -v /var/lib/ceph:/var/lib/ceph \
+    -v /var/log/ceph:/var/log/ceph \
+    ceph/deamon:latest osd_directory
