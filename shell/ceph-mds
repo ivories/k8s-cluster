@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo docker run -d --net=host \
+docker run -d --net=host \
  -v /home/core/data/ceph/var/lib/ceph/:/var/lib/ceph \
  -v /home/core/data/ceph/etc/ceph:/etc/ceph \
  -e CEPHFS_CREATE=1 \
