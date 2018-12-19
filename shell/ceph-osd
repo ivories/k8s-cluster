@@ -10,7 +10,6 @@
     -v /home/core/data/ceph/var/lib/ceph:/var/lib/ceph \
     -v /home/core/data/ceph/var/log/ceph:/var/log/ceph \
     -v /dev/:/dev/ \
-    -e OSD_FORCE_ZAP=1 \
+#    -e OSD_FORCE_ZAP=1 \
     -e OSD_DEVICE=/dev/sdb \
     ceph/daemon osd_ceph_disk
-
