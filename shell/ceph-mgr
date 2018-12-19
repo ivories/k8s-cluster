@@ -1,0 +1,6 @@
+#!/bin/bash
+
+docker run -d --net=host \
+-v /home/core/data/ecph/etc/ceph:/etc/ceph \
+-v /home/core/data/ecph/var/lib/ceph/:/var/lib/ceph/ \
+ceph/daemon mgr
