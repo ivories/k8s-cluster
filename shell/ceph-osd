@@ -6,7 +6,11 @@
     --restart=always \
     --privileged=true \
     --pid=host \
-    -v /etc/ceph:/etc/ceph \
-    -v /var/lib/ceph:/var/lib/ceph \
-    -v /var/log/ceph:/var/log/ceph \
-    ceph/daemon osd_directory
+    -v /home/core/data/ceph/etc/ceph:/etc/ceph \
+    -v /home/core/data/ceph/var/lib/ceph:/var/lib/ceph \
+    -v /home/core/data/ceph/var/log/ceph:/var/log/ceph \
+    -v /dev/:/dev/ \
+    -e OSD_FORCE_ZAP=1 \
+    -e OSD_DEVICE=/dev/sdb \
+    ceph/daemon osd_ceph_disk
+
