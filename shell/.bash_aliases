@@ -23,7 +23,12 @@ alias gadd='sudo git add'
 alias sgadd='sudo git add'
 alias gs='git status'
 
-###Kubectl
+###Kubectl###
 alias kddep='kubectl delete deployment'
 alias kdpod='kubectl delete pod'
 alias kdsvc='kubectl delete svc'
+
+
+###Docker Ceph###
+alias ceph-s='docker exec mon ceph -s'
+
