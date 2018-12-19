@@ -1,6 +1,6 @@
 
-git config --global user.email "lyclyc88@126.com"
-git config --global user.name "Eric.Liu"
+sudo git config --global user.email "lyclyc88@126.com"
+sudo git config --global user.name "Eric.Liu"
 
 export PATH=$PATH:/home/core/data/shell
 
