@@ -2,11 +2,10 @@
 docker run -d --net=host \
 --name=mon \
 --restart=always \
--v /var/log/ceph:/var/log/ceph \
--v /etc/ceph:/etc/ceph \
--v /var/lib/ceph:/var/lib/ceph \
+-v /home/core/data/ceph/etc/ceph:/etc/ceph \
+-v /home/core/data/ceph/var/lib/ceph:/var/lib/ceph \
 -e MON_IP=10.140.0.5 \
--e CEPH_PUBLIC_NETWORK=10.140.0.0/16 \
+-e CEPH_PUBLIC_NETWORK=10.140.0.0/24 \
 ceph/daemon mon
 
 
